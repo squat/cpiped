@@ -1,0 +1,13 @@
+diff --git a/cpiped.c b/cpiped.c
+index 1899b34..68be2ce 100644
+--- a/cpiped.c
++++ b/cpiped.c
+@@ -365,7 +365,7 @@ int main(int argc, char *argv[]) {
+     }
+     
+     wrote = 0;
+-    if (!fillbuf) {
++    if (!fillbuf && !silent) {
+       bufstarttoend = bufsize - bufstart;
+       if (writebytes <= bufstarttoend) { // No wrap required
+         rc = write(writefd, buf + bufstart, writebytes);
